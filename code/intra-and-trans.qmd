@@ -41,10 +41,6 @@ pacman::p_load(
 
 )
 
-if (!requireNamespace("myRutil", quietly = TRUE)) {
-  devtools::install("/home/richevans/R-packages/myRutil")
-}
-library(myRutil)
 
 ```
 
@@ -104,7 +100,7 @@ url = {https://doi.org/10.15139/S3/12193}
 
 # read data files
 
-path <- "/home/richevans/Insync/richard.bc.evans@gmail.com/Google Drive/2-my-work/slave-density/data/files-for-import/"
+path <- "/Users/richardevans/Library/Mobile Documents/com~apple~CloudDocs/2-my-work/combined-slave-voyages/data/files-for-import/"
 
 # the region codes
 table_region_codes<- rio::import(paste0(path,"region-codes-spss-2023-table-2.csv"))
@@ -186,7 +182,7 @@ trans <- trans |>
 df <- bind_rows(intra,trans) 
 
 
-write.csv(df[1:5,],"df5rows.csv")
+#write.csv(df[1:5,],"df5rows.csv")
 ```
 
 ### Make new variables with place names instead of region codes. The new variables have the same base names as the original datasets but with a "_names" suffix to indicate they are place names
@@ -210,7 +206,7 @@ The codebook has a "FATE 1" but that is called "FATE" in the dataset
 #| echo: FALSE
 
 
-
+# this is for a two column table
 # Function to replace codes with corresponding strings
 replace_codes <- function(value, lookup_table) {
   # Find the index of the value in the place_value column of the lookup_table
@@ -243,7 +239,7 @@ replace_codes <- function(value, lookup_table) {
 
 
 # Function to replace codes with corresponding strings
-# this is for a two column table, with col names value and label
+# this is for a one column table, with col names value and label
 replace_codes_one_column_table <- function(value, lookup_table) {
   # Find the index of the value in the place_value column of the lookup_table
   match_index_place <- match(value, lookup_table$value)
@@ -618,7 +614,7 @@ Here’s the short codebook for the day-related variables, including both the or
 
 This codebook lists each variable related to days, both with the original and new names, along with their descriptions.
 
-Let me know if you need further modifications!
+
 
 ```{r}
 #| lablel: "day-variables"
@@ -889,18 +885,18 @@ df3 <- df2 |>
     year25_year_25 = YEAR25,
     year100_year_100 = YEAR100,
     voyageid2_second_voyage_identification_number = VOYAGEID2,
-    afrinfo_african_information = AFRINFO,
-    other_cargo_other_cargo_carried = OTHER_CARGO,
+    #afrinfo_african_information = AFRINFO,
+    #other_cargo_other_cargo_carried = OTHER_CARGO,
     comments_comments_on_the_voyage = COMMENTS,
-    fate1_primary_fate_of_the_ship = FATE1,
+    #fate1_primary_fate_of_the_ship = FATE1,
     datebuy_date_of_purchase = DATEBUY,
     dateleftafr_date_left_africa = DATELEFTAFR,
     dateland1_date_landed_first_record = DATELAND1,
     dateland2_date_landed_second_record = DATELAND2,
     dateland3_date_landed_third_record = DATELAND3,
-    datebuy1_date_of_purchase_first_record = DATEBUY1,
+    #datebuy1_date_of_purchase_first_record = DATEBUY1,
     datedep_date_of_departure = DATEDEP,
-    datebuy2_date_of_purchase_second_record = DATEBUY2,
+    #datebuy2_date_of_purchase_second_record = DATEBUY2,
     adlt2imp_number_of_adults_imputed_field_2 = ADLT2IMP,
     adult2_number_of_adults_field_2 = ADULT2,
     adult4_number_of_adults_field_4 = ADULT4,
@@ -1010,11 +1006,14 @@ df3 <- df2 |>
     xmimpflag_voyage_groupings_for_estimating_imputed_slaves = XMIMPFLAG,
     yearaf_year_after_departure = YEARAF,
     yeardep_year_of_departure = YEARDEP,
-    dlslatra_complete_date_of_last_slave_transfer_complete_field_1 = DLSLATRA_complete,
-    datarr32_complete_date_of_arrival_complete_field_32 = DATARR32_complete,
-    datarr36_complete_date_of_arrival_complete_field_36 = DATARR36_complete,
-    datarr39_complete_date_of_arrival_complete_field_39 = DATARR39_complete,
-    ddepam_complete_departure_date_from_americas_complete_field_1 = DDEPAM_complete,
-    datarr43_complete_date_of_arrival_complete_field_43 = DATARR43_complete
+    #dlslatra_complete_date_of_last_slave_transfer_complete_field_1 = DLSLATRA_complete,
+    #datarr32_complete_date_of_arrival_complete_field_32 = DATARR32_complete,
+    #datarr36_complete_date_of_arrival_complete_field_36 = DATARR36_complete,
+    #datarr39_complete_date_of_arrival_complete_field_39 = DATARR39_complete,
+    #ddepam_complete_departure_date_from_americas_complete_field_1 = DDEPAM_complete,
+    #datarr43_complete_date_of_arrival_complete_field_43 = DATARR43_complete
   )
+
+
+
 ```
