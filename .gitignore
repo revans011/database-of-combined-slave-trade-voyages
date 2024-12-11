@@ -255,3 +255,8 @@ TSWLatexianTemp*
 *.sta
 .Rproj.user
 /old/slave-density
+code/.RData
+code/.Rhistory
+old/.DS_Store
+documents/.DS_Store
+.DS_Store
