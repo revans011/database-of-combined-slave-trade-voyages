@@ -1,5 +1,5 @@
 ---
-title: "Join Trans-Atlantic and Itra-America datasets"
+title: "Combine the Trans-Atlantic and Itra-American datasets"
 format: html
 editor: source
 execute:
@@ -49,7 +49,7 @@ pacman::p_load(
 
 1. .csv files with codes. These files are used as a lookup tables to replace then numeric rcodes in the original voyages files with place names, ship types, and so on. The tables were scrapped from the 
 
-2. Voyages-IAm-May2023.csv, which is the intra America data from
+2. Voyages-IAm-May2023.csv, which is the intra-American data from
 
 O’Malley, Gregory E. and Alex Borucki. “Creation of the Intra-American Slave Trade Database.” Journal of Slavery and Data Preservation 4, no. 2 (2023): 3-21. https://doi.org/10.25971/nkg5-cg94.
 
@@ -88,6 +88,9 @@ doi = {10.15139/S3/12193},
 url = {https://doi.org/10.15139/S3/12193}
 }
 
+
+The codebook changed from the 2022 version to the 20203. In the earlier version, region codes in the 8000's were "Other," now they are "Asia," and codes in the 9000's are "Other." However, the downloadable dataset are still in the 2022 coding. 
+
 ```{r}
 #| label: "read-data"
 #| include: FALSE
@@ -100,11 +103,20 @@ url = {https://doi.org/10.15139/S3/12193}
 
 # read data files
 
+
 path <- "/Users/richardevans/Library/Mobile Documents/com~apple~CloudDocs/2-my-work/combined-slave-voyages/data/files-for-import/"
 
-# the region codes
-table_region_codes<- rio::import(paste0(path,"region-codes-spss-2023-table-2.csv"))
-table_region_codes <- table_region_codes |> clean_names()
+## Need codes from both 2022 and 2023 codebooks to get all the place names
+
+# the region codes from 2022 codebook
+table_region_codes_2022 <- rio::import(paste0(path,"region-codes-spss-2022.csv"))
+table_region_codes_2022 <- table_region_codes_2022 |> clean_names()
+
+# the region codes from 2023 codebook
+table_region_codes_2023<- rio::import(paste0(path,"region-codes-spss-2023-table-2.csv"))
+table_region_codes_2023 <- table_region_codes_2023 |> clean_names()
+
+table_region_codes <- rbind(table_region_codes_2022,table_region_codes_2023)
 
 # need NA to use fill to fill down tables
 table_region_codes <- table_region_codes |>
@@ -160,6 +172,7 @@ trans <- trans |>
     mutate(across(where(is.character), ~ na_if(., "")))
 
 
+table(trans$PLACCONS)
 ```
 
 ### join the rows of the slave voyages datasets
@@ -174,7 +187,7 @@ trans <- trans |>
 
 
 intra <- intra |>
-  mutate(intra_or_trans = "intra_america")
+  mutate(intra_or_trans = "intra_american")
 
 trans <- trans |>
   mutate(intra_or_trans = "trans_atlantic")
@@ -211,7 +224,7 @@ missing_vars <- function(data, group_var, target_group) {
 }
 
 # Variables missing entirely for intra group
-missing_intra <- missing_vars(df, "intra_or_trans", "intra_america")
+missing_intra <- missing_vars(df, "intra_or_trans", "intra_american")
 
 # Variables missing entirely for trans group
 missing_trans <- missing_vars(df, "intra_or_trans", "trans_atlantic")
@@ -265,7 +278,7 @@ results_df <- data.frame(
   Variable_missing_all_data = c(results$common_vars_missing_all_data, results$intra_vars_missing_all_data, results$trans_vars_missing_all_data),
   Voyage_missing_data = c(
     rep("Both", length(results$common_vars_missing_all_data)),
-    rep("Intra-America", length(results$intra_vars_missing_all_data)),
+    rep("Intra-American", length(results$intra_vars_missing_all_data)),
     rep("Trans-Atlantic", length(results$trans_vars_missing_all_data))
   )
 )
@@ -446,7 +459,7 @@ FATE4_names = replace_codes_one_column_table(FATE4, fate4_table))
 df1 <- df1 |> mutate(
 RESISTANCE_names = replace_codes_one_column_table(RESISTANCE, resistance_table))
 
-
+table(df1$PLACCONS_names)
 ```
 
 Now there are `r ncol(df1) - ncol(df)` new variables
@@ -603,7 +616,7 @@ head(df|> select(VOYAGEID,PLACCONS ))
 - **YEARAM**: Year of arrival at port of disembarkation (imputed)
 - **YEARDEP**: Year voyage began (imputed)
 
-### Dates Involving America
+### Dates Involving American 
 #### Subgroup 1.1: First Disembarkation of Slaves
 - **DATARR32**: Day of first disembarkation of slaves
 - **DATARR33**: Month of first disembarkation of slaves
@@ -667,7 +680,7 @@ Here’s a short codebook for the year-related variables, incorporating both the
 #| warning: FALSE
 #| echo: FALSE
 
-df2 |> select(contains("ye")) |> glimpz()
+#df2 |> select(contains("ye")) |> glimpz()
 
 df2 <-
 df2 |>
