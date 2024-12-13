@@ -24,7 +24,7 @@ The R code in this repo:
 
 7. Reconciles the codebooks with the data. The most data available for download is consistent with the 2022 Codebook, rather than the 2023 Codebook. 
 8. Removes diatcritical marks, which can confound some statistical packages.
-9. Makes missing values NA
+9. Follows R convention by using NA for missing values.
 
 ## Output
 
