@@ -31,9 +31,9 @@ The R script makes an R dataframe called AtlanticWorld, which is the combined, m
 
 ## Quick start
 
-1. Clone this repo to a folder on your computer
-2. Download the current Trans-Atlantic and Intra-American datasets in CSV format. Put them in the folder with the R script. That folder also has a number of .csv files.
-3. Run the R script called **AtlanticWorldSlaveVoyages.R** (useage: AtlanticWorldSlaveVoyages(intra.csv,trans.csv), but replace intra.csv and trans.csv with the names of your downloaded files)
+1. copy this the _code_and_files_ folder to your computer.
+2. Download the current Trans-Atlantic and Intra-American datasets in CSV format. Put them in the folder with the R script. There should now be three files in _code_and_files_ (the two datasets and an R script) plus a folder called _numeric_lookup_files_.
+3. In R, run the R script called **AtlanticWorldSlaveVoyages.R** (useage: AtlanticWorldSlaveVoyages(intra.csv,trans.csv), but replace intra.csv and trans.csv with the names of your downloaded files)
 
 ## Short biblography
 
