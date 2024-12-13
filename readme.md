@@ -8,12 +8,13 @@ To facilitate statistical modeling of the [SlaveVoyages.org](https://www.slavevo
 
 ## Why update the datasets?
 
-The SlaveVoyages.org interface is excellent for teaching and for calculating basic data summaries, but it cannot be used to easily compare the datasets with statistical software, borrow strength between the datasets, or to model relationships among variables. Currently it is not possible, through the interface, to do multiple imputation for missing data, statistical modeling, machine learning or use AI. 
+The SlaveVoyages.org interface is excellent for teaching and for calculating basic data summaries, but it cannot be easily used to compare the datasets with statistical software, borrow strength between the datasets, or to model relationships among variables. Using the update in this repo, it is possible to model uncertainty, to do multiple imputation for missing data, to do statistical modeling, as well as machine learning and AI. 
 
 
 ## What we have done
 
-The [SlaveVoyages.org](https://www.slavevoyages.org) website allows users to download the Trans-Atlantic and Intra-American databases separately.
+The [SlaveVoyages.org](https://www.slavevoyages.org) website allows users to download the Trans-Atlantic and Intra-American databases separately, for analyses.
+
 The R code in this repo:
 
 1. Combines the datasets into one, with a grouping variable called _intra_or_trans_ to distinguish the two original datasets.
@@ -33,3 +34,6 @@ The R script makes an R dataframe called AtlanticWorld, which is the combined, m
 1. Clone this repo to a folder on your computer
 2. Download the current Trans-Atlantic and Intra-American datasets in CSV format. Put them in the folder with the R script. That folder also has a number of .csv files.
 3. Run the R script called **AtlanticWorldSlaveVoyages.R** (useage: AtlanticWorldSlaveVoyages(intra.csv,trans.csv), but replace intra.csv and trans.csv with the names of your downloaded files)
+
+## Short biblography
+
