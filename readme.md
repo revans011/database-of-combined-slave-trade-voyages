@@ -4,7 +4,7 @@ This repo provides R code that makes it easier for scholars to statistically ana
 
 ## Objective
 
-To facilitate statistical modeling of the [SlaveVoyages.org](https://www.slavevoyages.org) data by reorganizing it into a format consist with biomedical retrospective datasets.
+To facilitate statistical modeling of the [SlaveVoyages.org](https://www.slavevoyages.org) data by reorganizing in a format consistant with biomedical retrospective datasets.
 
 ## Why update the datasets?
 
