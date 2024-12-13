@@ -14,7 +14,7 @@ to model relationships among variables. Currently it is not possible, through th
 
 ## What we have done
 
-The [SlaveVoyages.org](https://www.slavevoyages.org) website allows users to download the Trans-Atlantic and Intra-American databases seperately.
+The [SlaveVoyages.org](https://www.slavevoyages.org) website allows users to download the Trans-Atlantic and Intra-American databases separately.
 The R code in this repo:
 
 1. Combines the datasets into one, with a grouping variable called _intra_or_trans_ to distinguish the two original datasets.
