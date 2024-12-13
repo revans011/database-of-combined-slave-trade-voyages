@@ -1,6 +1,6 @@
 # Atlantic World Slave Voyages
 
-This repo provides R code that makes it easier for academics to statistically analyze the Trans-Atlantic and Intra-American databases available on [SlaveVoyages.org](https://www.slavevoyages.org), as a single, simplified dataset.
+This repo provides R code that makes it easier for academics to statistically analyze the Trans-Atlantic and Intra-American databases available on [SlaveVoyages.org](https://www.slavevoyages.org).
 
 ## Objective
 
@@ -8,8 +8,7 @@ To facilitate statistical modeling of the [SlaveVoyages.org](https://www.slavevo
 
 ## Why update the datasets?
 
-The SlaveVoyages.org interface is excellent for teaching and for calculating basic data summaries, but it cannot be used to easily compare the datasets with statistical software, borrow strength between the datasets, or 
-to model relationships among variables. Currently it is not possible, through the interface, to do multiple imputation for missing data, statistical modeling, machine learning or use AI. 
+The SlaveVoyages.org interface is excellent for teaching and for calculating basic data summaries, but it cannot be used to easily compare the datasets with statistical software, borrow strength between the datasets, or to model relationships among variables. Currently it is not possible, through the interface, to do multiple imputation for missing data, statistical modeling, machine learning or use AI. 
 
 
 ## What we have done
