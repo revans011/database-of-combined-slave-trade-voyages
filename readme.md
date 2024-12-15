@@ -33,9 +33,26 @@ The R script makes an R dataframe called AtlanticWorld, which is the combined, m
 
 ## Quick start
 
-1. copy the _code_and_files_ folder to your computer.
+1. Copy the _code_and_files_ folder to your computer.
 2. Download the current Trans-Atlantic and Intra-American datasets in CSV format. Put them in the folder with the R script. There should now be three files in _code_and_files_ (the two datasets and an R script) plus a folder called _numeric_lookup_files_.
 3. In R, run the R script called **AtlanticWorldSlaveVoyages.R** (useage: AtlanticWorldSlaveVoyages(intra.csv,trans.csv), but replace intra.csv and trans.csv with the names of your downloaded files)
 
-## Short biblography
+## Short bibliography
 
+Elits, David. "The Trans-Atlantic Slave Trade Database: Origins, Development, Content." _Journal of Slavery and Data Preservation_ 2, no. 3 (2021): 1-8. https://doi.org/10.25971/R9H6-QX59.
+
+O’Malley, Gregory E. and Alex Borucki. “Creation of the Intra-American Slave Trade Database.” _Journal of Slavery and Data Preservation_ 4, no. 2 (2023): 3-21. https://doi.org/10.25971/nkg5-cg94.
+
+Williams, Jennie K. "The Coastwise Traffic to New Orleans Dataset: Documenting North American Voyages in the IASTD." _Journal of Slavery and Data Preservation_ 4, no. 2 (2023): 27-34. https://doi.org/10.25971/bpz3-0f38.
+
+The Trans-Atlantic Slave Trade Database. 2019. SlaveVoyages. https://www.slavevoyages.org (accessed January 1, 2025).
+
+Eltis, David, et al. The Atlantic Slave Trade Database, available online at http://www.slavevoyages.org/voyage/download.
+
+### Imputed data
+
+Estimates. 2019. _SlaveVoyages_. https://slavevoyages.org/assessment/estimates (accessed January 1, 2025).
+
+## License
+
+[Creative Commons Noncommercial]( https://creativecommons.org/licenses/by-nc/4.0/)
