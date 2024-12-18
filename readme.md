@@ -8,7 +8,7 @@ To facilitate statistical modeling of the [SlaveVoyages.org](https://www.slavevo
 
 ## Why update the datasets?
 
-The SlaveVoyages.org interface is excellent for teaching and for calculating basic data summaries, but it cannot be easily used to compare the datasets with statistical software, borrow strength between the datasets, or to model relationships among variables. Using the update in this repo, it is possible to model uncertainty, to do multiple imputation for missing data, to do statistical modeling, as well as machine learning and AI. 
+The SlaveVoyages.org interface is excellent for teaching and for calculating basic data summaries, but it cannot be easily used to compare the datasets with statistical software, borrow strength between the datasets, or to model relationships among variables. Using the update in this repo, it is possible to model uncertainty, to do Bayesian inference with subjective priors, to do multiple imputation for missing data, to do statistical modeling, as well as machine learning and AI. 
 
 
 ## What we have done
