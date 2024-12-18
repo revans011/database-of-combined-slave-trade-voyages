@@ -13,23 +13,30 @@ The SlaveVoyages.org interface is excellent for teaching and for calculating bas
 
 ## What we have done
 
+In short, the _Intra-American_ and _Trans-Atlantic voyages_ databases were combined row-wise, and then merged with the _African Origins_ database
+
+### Combined and modifed the _Intra-American_ and _Trans-Atlantic voyages_ databases
+
 The [SlaveVoyages.org](https://www.slavevoyages.org) website allows users to download the Trans-Atlantic and Intra-American databases separately, for analyses.
 
 The R code in this repo:
 
 1. Combines the datasets into one, with a grouping variable called _intra_or_trans_ to distinguish the two original datasets.
-2. Makes the variable names user friendly (e.g., REGDIS1 has been renamed _first_region_of_disembarkation_.)
-3. Converts dates from character format to date format for easier date arithmetic
-4. Replaces numeric codes with real names. For example, in the original datasets, the variable representing the slave ship's rig is called RIG, and it has numbers for values instead of the actual rig names. The new Atlantic-World dataset has the actual rig names. For example, in the original datasets the number 35 represents "Snauw." The Atlantic-World dataset replaces the 35 with the word Snauw. Likewise, in the original datasets, the variable representing first intended port of embarkation is called EMBREG, and its values are in the form of numbers, such as 60500, which means “Bight of Benin.” The Atlantic-World dataset renames EMBREG _first_embarkation_region_, and uses “Bight of Benin” instead of 60500.
+2. Makes the variable names user friendly (e.g., REGDIS1 has been renamed _First_region_of_slave_landing_.)
+3. Converts dates from character format to date format (yyyy-mm-dd) for easier date arithmetic
+4. Replaces numeric codes with real names. For example, in the original datasets, the variable representing the slave ship's rig is called RIG, and it has numbers for values instead of the actual rig names. The new Atlantic-World dataset has the actual rig names. For example, in the original datasets the number 35 represents "Snauw." The Atlantic-World dataset replaces the 35 with the word Snauw. Likewise, in the original datasets, the variable representing first intended port of slave purchase is called EMBREG, and its values are in the form of numbers, such as 60500, which means “Bight of Benin.” The AWSTV dataset renames EMBREG _First_intended_region_of_purchase_of_slaves_, and uses “Bight of Benin” instead of 60500.
 
-7. Reconciles the codebooks with the data. The most data available for download is consistent with the 2022 Codebook, rather than the 2023 Codebook. 
-8. Removes diatcritical marks, which can confound some statistical packages.
+7. Reconciles the codebooks with the data. Some of the data available for download is consistent with the 2022 Codebook, rather than the 2023 Codebook. 
+8. Removes diatcritical marks, which confounds some statistical packages.
 9. Follows R convention by using NA for missing values.
 10. Makes day, month, year and period variables integers.
 
+### Merged the combined dataset with the _African Origins_ dataset
+
+
 ## Output
 
-The R script makes an R dataframe called AtlanticWorld, which is the combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file to use in other statistical software.
+The R script makes an R dataframe called _awstvDatabase_, which is the combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file to use in other statistical software. That file is called _Atlantic_World_Slave_Trade_voyages_database_with_origins.csv_
 
 ## Quick start
 
