@@ -4,7 +4,7 @@ This repo provides R code that makes it easier for scholars to statistically ana
 
 ## Objective
 
-To facilitate statistical modeling of the [SlaveVoyages.org](https://www.slavevoyages.org) data by reorganizing in a format consistant with biomedical retrospective datasets.
+To facilitate statistical modeling of the [SlaveVoyages.org](https://www.slavevoyages.org) data by reorganizing in a format consistent with biomedical retrospective datasets.
 
 ## Why update the datasets?
 
@@ -13,9 +13,9 @@ The SlaveVoyages.org interface is excellent for teaching and for calculating bas
 
 ## What we have done
 
-In short, the _Intra-American_ and _Trans-Atlantic voyages_ databases were combined row-wise, and then merged with the _African Origins_ database
+In short, the _Intra-American_ and _Trans-Atlantic_ voyages databases were combined row-wise and then merged with the _African Origins_ database.
 
-### Combined and modifed the _Intra-American_ and _Trans-Atlantic voyages_ databases
+### Combined and modified the _Intra-American_ and _Trans-Atlantic voyages_ databases
 
 The [SlaveVoyages.org](https://www.slavevoyages.org) website allows users to download the Trans-Atlantic and Intra-American databases separately, for analyses.
 
@@ -24,33 +24,36 @@ The R code in this repo:
 1. Combines the datasets into one, with a grouping variable called _intra_or_trans_ to distinguish the two original datasets.
 2. Makes the variable names user friendly (e.g., REGDIS1 has been renamed _First_region_of_slave_landing_.)
 3. Converts dates from character format to date format (yyyy-mm-dd) for easier date arithmetic
-4. Replaces numeric codes with real names. For example, in the original datasets, the variable representing the slave ship's rig is called RIG, and it has numbers for values instead of the actual rig names. The new Atlantic-World dataset has the actual rig names. For example, in the original datasets the number 35 represents "Snauw." The Atlantic-World dataset replaces the 35 with the word Snauw. Likewise, in the original datasets, the variable representing first intended port of slave purchase is called EMBREG, and its values are in the form of numbers, such as 60500, which means “Bight of Benin.” The AWSTV dataset renames EMBREG _First_intended_region_of_purchase_of_slaves_, and uses “Bight of Benin” instead of 60500.
+4. Replaces numeric codes with real names. For example, in the original datasets, the variable representing the slave ship's rig is called RIG, and it has numbers for values instead of the actual rig names. The new Atlantic-World dataset has the actual rig names. For example, in the original datasets the number 35 represents "Snauw." The Atlantic-World dataset replaces the 35 with the word Snauw. Likewise, in the original datasets, the variable representing first intended port of slave purchase is called EMBREG, and its values are in the form of numbers, such as 60500, which means “Bight of Benin.” The AWSTV dataset renames EMBREG _First_intended_region_of_purchase_of_slaves_ and uses “Bight of Benin” instead of 60500.
 
 7. Reconciles the codebooks with the data. Some of the data available for download is consistent with the 2022 Codebook, rather than the 2023 Codebook. 
-8. Removes diatcritical marks, which confounds some statistical packages.
+8. Removes diacritical marks, which confounds some statistical packages.
 9. Follows R convention by using NA for missing values.
 10. Makes day, month, year and period variables integers.
 
 ### Merged the combined dataset with the _African Origins_ dataset
 
+The combined _Intra-American_ and _Trans-Atlantic_ database is event-centric. Merging that set with the _African Origins_ dataset make the new combined database also people-centric. So, after combining the _Intra-American_ and _Trans-Atlantic_ databases, the _African Origins_ dataset was merged on "voyage id" (the unique voyage identifier). This allows person-level information to the entire voyage record.
 
 ## Output
 
-The R script makes an R dataframe called _awstvDatabase_, which is the combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file to use in other statistical software. That file is called _Atlantic_World_Slave_Trade_voyages_database_with_origins.csv_
+The R script makes an R dataframe called _awstvDatabase_, which is the three combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file to use in other statistical software. That file is called _Atlantic_World_Slave_Trade_voyages_database_with_origins.csv_
 
 ## Quick start
 
 1. Copy the _code_and_files_ folder to your computer.
-2. Download the current Trans-Atlantic and Intra-American datasets in CSV format. Put them in the folder with the R script. There should now be three files in _code_and_files_ (the two datasets and an R script) plus a folder called _numeric_lookup_files_.
-3. In R, run the R script called **AtlanticWorldSlaveVoyages.R** (useage: AtlanticWorldSlaveVoyages(intra.csv,trans.csv), but replace intra.csv and trans.csv with the names of your downloaded files)
+2. Download the current _Trans-Atlantic_, _Intra-American_ and _African Origins_ datasets in CSV format. Put them in the folder with the R script. There should now be four files in _code_and_files_ (the three datasets and an R script) plus a folder called _lookup_files_.
+3. In R, run the R script called **AWSTVD_builder.R** (useage: AWSTVD_builder()).
+
+## Acknowledgements
+
+An incredible amount of work is involved with the Slave Voyages databases. [Here are the people who make it work](https://www.slavevoyages.org/about/about#project-team/2/en/).
 
 ## Short bibliography
 
-Elits, David. "The Trans-Atlantic Slave Trade Database: Origins, Development, Content." _Journal of Slavery and Data Preservation_ 2, no. 3 (2021): 1-8. https://doi.org/10.25971/R9H6-QX59.
+Eltis, David. "The Trans-Atlantic Slave Trade Database: Origins, Development, Content." _Journal of Slavery and Data Preservation_ 2, no. 3 (2021): 1-8. https://doi.org/10.25971/R9H6-QX59.
 
 O’Malley, Gregory E. and Alex Borucki. “Creation of the Intra-American Slave Trade Database.” _Journal of Slavery and Data Preservation_ 4, no. 2 (2023): 3-21. https://doi.org/10.25971/nkg5-cg94.
-
-Williams, Jennie K. "The Coastwise Traffic to New Orleans Dataset: Documenting North American Voyages in the IASTD." _Journal of Slavery and Data Preservation_ 4, no. 2 (2023): 27-34. https://doi.org/10.25971/bpz3-0f38.
 
 The Trans-Atlantic Slave Trade Database. 2019. SlaveVoyages. https://www.slavevoyages.org (accessed January 1, 2025).
 
