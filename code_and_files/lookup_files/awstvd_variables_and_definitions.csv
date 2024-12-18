@@ -175,10 +175,10 @@ Index,Variable Names,Definition,Definition_Underscore
 174,PORTDEP,Port of departure,Port_of_departure
 175,PORTRET,Place at which voyage ended,Place_at_which_voyage_ended
 176,PTDEPIMP,Imputed port where voyage began,Imputed_port_where_voyage_began
-177,REGARR,First region of slave disembarkation,First_region_of_slave_disembarkation
-178,REGARR2,Second region of slave disembarkation,Second_region_of_slave_disembarkation
-179,REGARR3,Third region of slave disembarkation,Third_region_of_slave_disembarkation
-180,REGARR4,Fourth region of slave disembarkation,Fourth_region_of_slave_disembarkation
+177,REGARR,First region of slave disembarkation,First_intended_region_of_slave_disembarkation
+178,REGARR2,Second region of slave disembarkation,Second_intended__region_of_slave_disembarkation
+179,REGARR3,Third region of slave disembarkation,Third_intended_region_of_slave_disembarkation
+180,REGARR4,Fourth region of slave disembarkation,Fourth_intended_region_of_slave_disembarkation
 181,REGDIS1,First region of slave landing,First_region_of_slave_landing
 182,REGDIS2,Second region of slave landing,Second_region_of_slave_landing
 183,REGDIS3,Third region of slave landing,Third_region_of_slave_landing
