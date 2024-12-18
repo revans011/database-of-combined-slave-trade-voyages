@@ -21,7 +21,7 @@ pacman::p_load(
 # read the numeric code lookup files
 
 
-path <- "numeric_lookup_files/"
+path <- "lookup_files/"
 
 
 ## Need codes from both 2022 and 2023 codebooks to get all the place names
@@ -119,7 +119,7 @@ df <- merge(df, africanOrigins, by = "voyage_id", all.x = TRUE)
 
 # --------- import the updated varaible names
 
-var_names <- rio::import(paste0(path,"awstd_variables_and_definitions.csv"))
+var_names <- rio::import(paste0(path,"awstvd_variables_and_definitions.csv"))
 
 
 #------ make two functions that look up numeric codes and replace them with their real meanings
@@ -361,22 +361,26 @@ convert_dates <- function(date_vector) {
 
 
 df2 <- df2 |>
-  mutate(DATEDEP = convert_dates(DATEDEP),
-         DATEBUY = convert_dates(DATEBUY),
-         DATELEFTAFR = convert_dates(DATELEFTAFR), 
-         DATELAND1 = convert_dates(DATELAND1),
-         DATELAND2 = convert_dates(DATELAND2),
-         DATELAND3 = convert_dates(DATELAND3),
-         DATEDEPAM = convert_dates(DATEDEPAM),
-         DATEEND = convert_dates(DATEEND)
+  mutate(DATEDEP = as.Date(convert_dates(DATEDEP)),
+         DATEBUY = as.Date(convert_dates(DATEBUY)),
+         DATELEFTAFR = as.Date(convert_dates(DATELEFTAFR)), 
+         DATELAND1 = as.Date(convert_dates(DATELAND1)),
+         DATELAND2 = as.Date(convert_dates(DATELAND2)),
+         DATELAND3 = as.Date(convert_dates(DATELAND3)),
+         DATEDEPAM = as.Date(convert_dates(DATEDEPAM)),
+         DATEEND = as.Date(convert_dates(DATEEND))
   )
+
 
 
 #-------rename the variables with names that are easier to understand --------
 
 names(df2) <- c("voyage_id", var_names$Definition_Underscore)
 
- #write.csv(df2,"Atlantic_World_Slave_voyages.csv")
+#give the R dataframe a better name to work with
+awstvDatabase <- df2
+
+write.csv(awstvDatabase,"Atlantic_World_Slave_Trade_voyages_database_with_origins.csv")
  
  
  
