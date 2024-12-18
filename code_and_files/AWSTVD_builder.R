@@ -380,7 +380,7 @@ names(df2) <- c("voyage_id", var_names$Definition_Underscore)
 #give the R dataframe a better name to work with
 awstvDatabase <- df2
 
-write.csv(awstvDatabase,"Atlantic_World_Slave_Trade_voyages_database_with_origins.csv")
+#write.csv(awstvDatabase,"Atlantic_World_Slave_Trade_voyages_database_with_origins.csv")
  
  
  
