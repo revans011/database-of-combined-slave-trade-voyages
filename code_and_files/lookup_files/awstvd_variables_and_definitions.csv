@@ -254,7 +254,7 @@ Index,Variable Names,Definition,Definition_Underscore
 253,WOMEN6,Women disembarked at the second place of landing,Women_disembarked_at_the_second_place_of_landing
 254,WOMEN7,Derived number of women at departure or arrival,imputed_number_of_women_at_departure_or_arrival
 255,WOMRAT7,Percentage of women at departure or arrival,Percentage_of_women_at_departure_or_arrival
-256,XMIMPFLAG,Value flag for imputed variables,Value_flag_for_imputed_variables
+256,XMIMPFLAG,Voyage groupings for estimating imputed slaves,Voyage_groupings_for_estimating_imputed_slaves
 257,YEAR10,Decade in which voyage occurred,Decade_in_which_voyage_occurred
 258,YEAR100,Century in which voyage occurred,Century_in_which_voyage_occurred
 259,YEAR25,Quarter_century in which voyage occurred,Quarter_century_in_which_voyage_occurred

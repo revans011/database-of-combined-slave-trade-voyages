@@ -219,12 +219,6 @@ df1 <- df |>
   )
 
 
-# Convert character variables to ASCII to remove diacritical marks, which makes it hard to
- # for some functions to read
-
- df2 <- df1 |>
-   mutate(across(where(is.character), ~ iconv(., from = "UTF-8", to = "ASCII//TRANSLIT")))
- 
 
 
 # XMIMPFLAG code to names. 
@@ -279,8 +273,8 @@ RESISTANCE = replace_codes_one_column_table(RESISTANCE, resistance_table))
 
 #-------years and periods----------
 
-df2 <-
-df2 |>
+df1 <-
+df1 |>
   mutate(
     YRCONS = as.integer(YRCONS),
     YRREG = as.integer(YRREG),
@@ -303,8 +297,8 @@ df2 |>
 
 #----------months-------------------
 
-df2 <-
-df2 |>
+df1 <-
+df1 |>
   mutate(
      DATEDEPB = as.integer(DATEDEPB),
      D1SLATRB = as.integer(D1SLATRB),
@@ -318,8 +312,8 @@ df2 |>
 
 #-----------day----------
 
-df2 <-
-df2 |>
+df1 <-
+df1 |>
   mutate(
      DATEDEPA = as.integer(DATEDEPA),
      D1SLATRA = as.integer(D1SLATRA),
@@ -360,7 +354,7 @@ convert_dates <- function(date_vector) {
 
 
 
-df2 <- df2 |>
+df1 <- df1 |>
   mutate(DATEDEP = as.Date(convert_dates(DATEDEP)),
          DATEBUY = as.Date(convert_dates(DATEBUY)),
          DATELEFTAFR = as.Date(convert_dates(DATELEFTAFR)), 
@@ -372,13 +366,19 @@ df2 <- df2 |>
   )
 
 
+# Convert character variables to ASCII to remove diacritical marks, which makes it hard to
+# for some functions to read
+
+df1 <- df1 |>
+  mutate(across(where(is.character), ~ iconv(., from = "UTF-8", to = "ASCII//TRANSLIT")))
+
 
 #-------rename the variables with names that are easier to understand --------
 
-names(df2) <- c("voyage_id", var_names$Definition_Underscore)
+names(df1) <- c("voyage_id", var_names$Definition_Underscore)
 
 #give the R dataframe a better name to work with
-awstvDatabase <- df2
+awstvDatabase <- df1
 
 #write.csv(awstvDatabase,"Atlantic_World_Slave_Trade_voyages_database_with_origins.csv")
  
