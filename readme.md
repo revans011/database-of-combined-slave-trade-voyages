@@ -37,7 +37,7 @@ The combined _Intra-American_ and _Trans-Atlantic_ database is event-centric. Me
 
 ## Output
 
-The R script makes an R dataframe called _DCSTVoyages_, which is the three combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file (DCSTVoyages.csv) to use in other statistical software.
+The R script makes an R dataframe called _DCSTVoyages_, which is the three combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file (DCSTVoyages.csv) to use in other statistical software. DCSTVoyages.csv is zipped (DCSTVoyages.csv.zip) because of its large size.
 
 ## Quick start
 1. Use DCSTVoyages.RData or DCSTVoyages.csv directly.
