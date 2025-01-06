@@ -312,15 +312,15 @@ Index,Variable Names,Definition,Definition_Underscore
 311,AFRINFOA,African region information A,African_region_information_A
 312,AFRINFOB,African region information B,African_region_information_B
 313,AFRINFOC,African region information C,African_region_information_C
-,intra_or_trans,Which database intra_American or trans_Atlantic,intra_or_trans
-314,id,African ID,African_id_African_origins_dataset
-315,name,Name,name_of_person_African_origins_dataset
-316,age,Age,age_African_origins_dataset
-317,height,Height in inches,height_African_origins_dataset
-318,sex,Sex,sex_African_origins_dataset
-319,country,Language group,language_group_African_origins_dataset
-320,shipname,Ship name,name_of_vessel_African_origins_dataset
-321,datearr,Arrival date,arrival_date_African_origins_dataset
-322,majbuypt,Principal place of slave purchase,Principal_place_of_slave_purchase_names_African_origins_dataset
-323,majselpt,Principal port of slave disembarkation,Principal_port_of_slave_disembarkation_names__African_origins_dataset
-324,source,Source,source_African_origins_dataset
+314,intra_or_trans,Which database intra_American or trans_Atlantic,intra_or_trans
+315,id,African ID,African_id_African_origins_dataset
+316,name,Name,name_of_person_African_origins_dataset
+317,age,Age,age_African_origins_dataset
+318,height,Height in inches,height_African_origins_dataset
+319,sex,Sex,sex_African_origins_dataset
+320,country,Language group,language_group_African_origins_dataset
+321,shipname,Ship name,name_of_vessel_African_origins_dataset
+322,datearr,Arrival date,arrival_date_African_origins_dataset
+323,majbuypt,Principal place of slave purchase,Principal_place_of_slave_purchase_names_African_origins_dataset
+324,majselpt,Principal port of slave disembarkation,Principal_port_of_slave_disembarkation_names__African_origins_dataset
+325,source,Source,source_African_origins_dataset
