@@ -1,28 +1,3 @@
-value,label
-1,Spain
-2,Uruguay
-3,Spain / Uruguay
-4,Portugal
-5,Brazil
-6,Portugal / Brazil
-7,Great Britain
-8,Netherlands
-9,U.S.A.
-10,France
-11,Denmark
-12,"Hanse Towns, Brandenburg"
-13,Sweden
-14,Norway
-15,Denmark / Baltic
-16,Argentina
-17,Russia
-18,Sardinia
-19,Mexico
-24,Genoa
-25,Duchy of Courland
-26,Prussia
-27,Bremen
-28,Austria
-29,Germany
-30,Other
-31,Texas
+version https://git-lfs.github.com/spec/v1
+oid sha256:32f11b07892fa235ecd462781e3514e0ca4484be73ab66a08e103f9076d2c3ad
+size 354
