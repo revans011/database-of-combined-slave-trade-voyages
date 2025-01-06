@@ -1,4 +1,4 @@
-# Database of Slave Trade Voyages
+# Database of Combined Slave Trade Voyages
 
 This repo provides R code that makes it easier for scholars to statistically analyze the Trans-Atlantic and Intra-American slave voyages databases available on [SlaveVoyages.org](https://www.slavevoyages.org).
 
@@ -13,7 +13,7 @@ The SlaveVoyages.org interface is excellent for teaching and for calculating bas
 
 ## What we have done
 
-In short, the _Intra-American_ and _Trans-Atlantic_ voyages databases were combined row-wise and then merged with the _African Origins_ database.
+In short, the _Intra-American_ and _Trans-Atlantic_ voyages databases were combined row-wise and then merged with the _African Origins_ database. Also,
 
 ### Combined and modified the _Intra-American_ and _Trans-Atlantic voyages_ databases
 
@@ -37,13 +37,17 @@ The combined _Intra-American_ and _Trans-Atlantic_ database is event-centric. Me
 
 ## Output
 
-The R script makes an R dataframe called _awstvDatabase_, which is the three combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file to use in other statistical software. That file is called _Atlantic_World_Slave_Trade_voyages_database_with_origins.csv_
+The R script makes an R dataframe called _DCSTVoyages_, which is the three combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file (DCSTVoyages.csv) to use in other statistical software.
 
 ## Quick start
+1. Use DCSTVoyages.RData or DCSTVoyages.csv directly.
+
+To create DCSTVoyages.RData or DCSTVoyages.csv from new SlaveVoyages.org csv files:
 
 1. Copy the _code_and_files_ folder to your computer.
-2. Download the current _Trans-Atlantic_, _Intra-American_ and _African Origins_ datasets in CSV format. Put them in the folder with the R script. There should now be four files in _code_and_files_ (the three datasets and an R script) plus a folder called _lookup_files_.
-3. In R, run the R script called **AWSTVD_builder.R** (useage: AWSTVD_builder()).
+2. Download the current _Trans-Atlantic_, _Intra-American_, and _African Origins_ datasets in CSV format. Put them in the folder with the R script called DCSTV_builder.R. There should now be four files in _code_and_files_ (the three datasets and an R script) plus a folder called _lookup_files_.
+4. In R, run the R script called DCSTV_builder.R (useage: DCSTV_builder()).
+5. The path to the folder in DCSTV_builder.R my need to be edited.
 
 ## Acknowledgements
 
