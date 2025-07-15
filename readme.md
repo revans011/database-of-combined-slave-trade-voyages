@@ -39,6 +39,14 @@ The combined _Intra-American_ and _Trans-Atlantic_ database is event-centric. Me
 
 The R script makes an R dataframe called _DCSTVoyages_, which is the three combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file (DCSTVoyages.csv) to use in other statistical software. DCSTVoyages.csv is zipped (DCSTVoyages.csv.zip) because of its large size.
 
+## Caveat
+
+DCSTV is in long format, so that voyage-level data for a single voyage may be repeated over multiple records. Data analyses of voyage level data (e.g., counts of embarked persons, tonnage, port of embarkation)
+ The DCSTV is in long format, so that voyage-level data for a single voyage may be repeated over multiple records. Data analyses of voyage level data (e.g., counts of embarked persons, tonnage, port of embarkation) must appropriately account for this duplication to avoid erroneous results.
+
+This means that for any analysis focusing on characteristics of the voyages themselves (rather than individual enslaved Africans), the data should be aggregated or de-duplicated to ensure each unique voyage is represented only once. One approach to de-duplication is to select only the first occurrence of each voyage ID when performing voyage-level counts or summaries.
+
+
 ## Quick start
 1. Use DCSTVoyages.RData or DCSTVoyages.csv directly. To use DCSTVoyages.csv, download DCSTVoyages.csv.zip and extract DCSTVoyages.csv
 
