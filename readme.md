@@ -39,12 +39,11 @@ The combined _Intra-American_ and _Trans-Atlantic_ database is event-centric. Me
 
 The R script makes an R dataframe called _DCSTVoyages_, which is the three combined, modified [SlaveVoyages.org](https://www.slavevoyages.org) datasets, and it also exports that new dataset to a .csv file (DCSTVoyages.csv) to use in other statistical software. DCSTVoyages.csv is zipped (DCSTVoyages.csv.zip) because of its large size.
 
-## Caveat
+## Caveats
 
-DCSTV is in long format, so that voyage-level data for a single voyage may be repeated over multiple records. Data analyses of voyage level data (e.g., counts of embarked persons, tonnage, port of embarkation)
- The DCSTV is in long format, so that voyage-level data for a single voyage may be repeated over multiple records. Data analyses of voyage level data (e.g., counts of embarked persons, tonnage, port of embarkation) must appropriately account for this duplication to avoid erroneous results.
+1. The DCSTV is in long format, so that voyage-level data for a single voyage may be repeated over multiple records. Data analyses of voyage level data (e.g., counts of embarked persons, tonnage, port of embarkation) must appropriately account for this duplication to avoid erroneous results. This means that for any analysis focusing on characteristics of the voyages themselves (rather than individual enslaved Africans), the data should be aggregated or de-duplicated to ensure each unique voyage is represented only once. One approach to de-duplication is to select only the first occurrence of each voyage ID when performing voyage-level counts or summaries.
 
-This means that for any analysis focusing on characteristics of the voyages themselves (rather than individual enslaved Africans), the data should be aggregated or de-duplicated to ensure each unique voyage is represented only once. One approach to de-duplication is to select only the first occurrence of each voyage ID when performing voyage-level counts or summaries.
+2. One disadvantage of using names rather than codes is that names are not unique. For example, for the principal place captives were landed, “not specified” could refer to an unspecified port in Rhode Island, or in Virginia, and so on. Data analyst should use caution, filter by “broad region”, “specific region”, and “place,” and verify their results.
 
 
 ## Quick start
